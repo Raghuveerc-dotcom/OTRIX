@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: #f0f0f0;
+  }
+  
+  .dashboard-container {
+    padding: 20px;
+  }
+  
+  /* Header Section */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Menu Icon */
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .menu-icon span {
+    background: #f0f0f0;
+    height: 3px;
+    margin: 5px 0;
+    width: 25px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Side Menu */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -270px;
+    height: 100%;
+    width: 250px;
+    background: #1e2a38;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: all 0.4s ease;
+    padding-top: 20px;
+  }
+  
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-menu ul li {
+    margin: 20px;
+  }
+  
+  .side-menu ul li a {
+    color: #c7d3e3;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .side-menu ul li a:hover {
+    background: #314d68;
+    color: #fff;
+  }
+  
+  .side-menu.show {
+    left: 0;
+  }
+  
+  /* Welcome Message */
+  #welcome-message {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d9edf7;
+  }
+  
+  /* Logout Button */
+  #logout-button {
+    background: #e63946;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+  }
+  
+  #logout-button:hover {
+    background: #a71c28;
+  }
+  
+  /* Features Section */
+  .features-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .feature-card {
+    background: #2b3e50;
+    color: #e3eef7;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(45% - 10px);
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 0.5s ease;
+  }
+  
+  .feature-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #f7c59f;
+  }
+  
+  .feature-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Register Button */
+  #register-business-btn {
+    background: #1a535c;
+    color: #f7fff7;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 20px;
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #register-business-btn:hover {
+    background: #ff6b6b;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.5);
+  }
+  
+  /* Animations */
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

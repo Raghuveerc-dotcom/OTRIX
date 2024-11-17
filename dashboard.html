@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">OTRIX</a></span>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">OTRIX</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Registered Business</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i ></i>
+                    <i ></i>
+                </div>
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav><br><br><br><br>
+  <div class="dashboard-container">
+    <!-- Header Section -->
+    <header>
+      
+      <h1 id="welcome-message">Welcome, User!</h1>
+      <button id="logout-button">Logout</button>
+    </header>
+
+    <!-- Side Menu -->
+    
+
+    <!-- Main Section -->
+    <main>
+      <button id="register-business-btn" class="fade-in">Register Your Small Business</button>
+      <div class="features-section">
+        <div class="feature-card slide-up">
+          <h2>Finance Guidance</h2>
+          <p>Get help with taxes, funding, budgeting, and more.</p>
+        </div>
+        <div class="feature-card slide-up">
+          <h2>Marketing Assistance</h2>
+          <p>Learn strategies for advertising and product promotion.</p>
+        </div>
+        <div class="feature-card slide-up">
+          <h2>Investor Networking</h2>
+          <p>Connect with investors to grow your business.</p>
+        </div>
+        <div class="feature-card slide-up">
+          <h2>Idea Implementation</h2>
+          <p>Turn your ideas into reality with funding and development.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="dashboard.js"></script>
+
+
+
+
+  <script>
+    const body = document.querySelector("body"),
+          nav = document.querySelector("nav"),
+          modeToggle = document.querySelector(".dark-light"),
+          searchToggle = document.querySelector(".searchToggle"),
+          sidebarOpen = document.querySelector(".sidebarOpen"),
+          siderbarClose = document.querySelector(".siderbarClose");
+          let getMode = localStorage.getItem("mode");
+              if(getMode && getMode === "dark-mode"){
+                body.classList.add("dark");
+              }
+    // js code to toggle dark and light mode
+          modeToggle.addEventListener("click" , () =>{
+            modeToggle.classList.toggle("active");
+            body.classList.toggle("dark");
+            // js code to keep user selected mode even page refresh or file reopen
+            if(!body.classList.contains("dark")){
+                localStorage.setItem("mode" , "light-mode");
+            }else{
+                localStorage.setItem("mode" , "dark-mode");
+            }
+          });
+    // js code to toggle search box
+            searchToggle.addEventListener("click" , () =>{
+            searchToggle.classList.toggle("active");
+          });
+     
+          
+    //   js code to toggle sidebar
+    sidebarOpen.addEventListener("click" , () =>{
+        nav.classList.add("active");
+    });
+    body.addEventListener("click" , e =>{
+        let clickedElm = e.target;
+        if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+            nav.classList.remove("active");
+        }
+    });
+
+    
+        document.getElementById('register-business-btn').addEventListener('click', () => {
+          window.location.href = 'register.html';
+        });
+      
+    </script>
+
+</body>
+</html>

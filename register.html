@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Register - OTRIX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="register.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>Register Your Business</h1>
+        <form id="businessForm">
+            <input type="text" id="businessName" placeholder="Business Name" required>
+            <input type="text" id="ownerName" placeholder="Owner Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <select id="businessType" required>
+                <option value="">Select Business Type</option>
+                <option value="Startup">Startup</option>
+                <option value="Established">Established</option>
+            </select>
+            <input type="text" id="industry" placeholder="Industry" required>
+            <input type="text" id="location" placeholder="Business Location" required>
+            <textarea id="description" placeholder="Business Description" rows="4" required></textarea>
+            <label for="funding">Need Funding?</label>
+            <select id="funding" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <input type="number" id="amount" placeholder="Investment Amount Needed" required>
+            <textarea id="howHelp" placeholder="How Can We Help?" rows="4"></textarea>
+            <input type="file" id="logo" accept="image/*">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-storage-compat.js"></script>
+
+    <script src="firebase-config.js"></script>
+
+    <script src="register.js"></script>
+</body>
+</html>
